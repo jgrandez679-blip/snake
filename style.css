@@ -1,24 +1,82 @@
-body{
-    background-color: rgb(25, 1, 80);
-    color: white;
-    text-align: center;
-    display: flex;
-    flex-direction:column ;
-    justify-content: flex-start;
-    min-height: 100vh;
-    margin: 0;
-    padding-top: 50px;
+body {
+  background-color: rgb(25, 1, 80);
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 50px;
 }
 
-.cabeza{
-    color: aqua;
+.cabeza {
+  color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-.stckp{
-    height: auto;
-    width: 200px;
-    display: flex;
-    text-align: center;
-    flex-direction:column ;
-    justify-content: flex-start;
+.stckp {
+  height: auto;
+  width: 200px;
+  margin: 0 auto;
+  align-self: center;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  pointer-events: none;
 }
+
+.btn-flip {
+  opacity: 1;
+  outline: 0;
+  color: #fff;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+}
+.btn-flip:hover:after {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+}
+.btn-flip:hover:before {
+  opacity: 0;
+  transform: translateY(50%) rotateX(90deg);
+}
+.btn-flip:after {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  color: #323237;
+  display: block;
+  transition: 0.5s;
+  position: absolute;
+  background: #adadaf;
+  content: attr(data-back);
+  transform: translateY(-50%) rotateX(90deg);
+}
+.btn-flip:before {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  color: #adadaf;
+  display: block;
+  padding: 0 30px;
+  line-height: 40px;
+  transition: 0.5s;
+  position: relative;
+  background: #323237;
+  content: attr(data-front);
+  transform: translateY(0) rotateX(0);
+}
+
+/*# sourceMappingURL=style.css.map */
