@@ -1,10 +1,11 @@
+/*pincipal*/
 body{
     background-color: rgb(25, 1, 80);
     color: white;
     text-align: center;
     display: flex;
     flex-direction:column ;
-    justify-content: flex-start;
+    justify-content: flex-start; 
     min-height: 100vh;
     margin: 0;
     padding-top: 50px;    
@@ -18,6 +19,7 @@ body{
     gap: 10px;
 }
 
+/*sticker*/
 .stckp{
     height: auto;
     width: 200px;
@@ -30,6 +32,7 @@ body{
     pointer-events:none
 }
 
+/* boton principal para comenzar*/
 $speed: 0.5s;
 
 .btn-flip{
@@ -83,7 +86,98 @@ $speed: 0.5s;
 		transition: $speed;
 		position: relative;
 		background: #323237;
-		content: attr(data-front);
+		content: attr(data-front); 
 		transform: translateY(0) rotateX(0);
 	}
+}
+
+/* este es el menu */
+$menu-background: #343e48;
+$blue: #4795c3;
+$grey: #686f77;
+$yellow: #ecc64b;
+$green: #0b9ea6;
+$red: #f26667;
+
+@import url(https://fonts.googleapis.com/css?family=Lato:100,400);
+
+html {
+  height:100%;
+  perspective: 1000px;
+  transform-style:preserver-3d;
+  font-family:lato, sans-serif;
+}
+ul {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  min-width:535px;
+  background-color: $menu-background;
+  position:relative;
+
+  &:after {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+     width:100%;
+    height:100%;
+    opacity:.5;
+     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB9JREFUeNpiZmBg6AZiDiBWZ4YyQMCOCcYA4kMAAQYAHyYCCUdxidgAAAAASUVORK5CYII=');
+  }
+ 
+  box-shadow:0 3px 8px rgba(black,.5);
+}
+
+li {
+  margin: 0 auto;
+  display: inline-block;
+  list-style: none;
+  padding:0;
+}
+
+a {
+  display: block;
+  padding: 25px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+  text-shadow:1px 0px rgba(black,.4);
+  color: $grey;
+  letter-spacing:.2em;
+  text-decoration: none;
+  transition: color 200ms;
+  transform-style: preserve-3d;
+  &:hover {
+    color: $menu-background;
+  }
+  &:after {
+    content: attr(data-title);
+    position: absolute;
+    display: block;
+    text-shadow:none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: center;
+    color: transparent;
+    background: $blue;
+    li:nth-child(2) & { background:$yellow; }
+     li:nth-child(3) & { background:$green; }
+     li:nth-child(4) & { background:$red; }
+    transform-origin: 50% 0%;
+      backface-visibility: hidden;
+    transform: translate3d(0px, 105%, 0px) rotateX(-112deg);
+    transform-style: preserve-3d;
+    transition: all 200ms ease;
+    z-index: -1;
+  }
+  &:hover:after {
+    transform: rotateX(0deg) translateZ(0px);
+  }
 }
