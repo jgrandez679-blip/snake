@@ -9,3 +9,16 @@ body{
     margin: 0;
     padding-top: 50px;
 }
+
+.cabeza{
+    color: aqua;
+}
+
+.stckp{
+    height: auto;
+    width: 200px;
+    display: flex;
+    text-align: center;
+    flex-direction:column ;
+    justify-content: flex-start;
+}
