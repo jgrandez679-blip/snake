@@ -66,6 +66,11 @@ $speed: 0.5s;
 		left: 0;
 		opacity: 0;
 		width: 100%;
+		height: auto;
+		box-sizing: border-box;
+		padding: 0 30px;
+		line-height: 40px;
+		text-align: center;
 		color: #323237;
 		display: block;
 		transition: $speed;
@@ -136,6 +141,13 @@ li {
   display: inline-block;
   list-style: none;
   padding:0;
+}
+
+/* todos los items del menu con el mismo ancho y alto */
+li a {
+  width: 220px;
+  box-sizing: border-box;
+  padding: 25px 10px;
 }
 
 a {
